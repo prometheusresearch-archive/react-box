@@ -7,6 +7,9 @@ SRC           = $(filter-out $(TESTS), $(shell find src -name '*.js'))
 LIB           = $(SRC:src/%=lib/%)
 NODE          = $(BIN)/babel-node $(BABEL_OPTIONS)
 
+example::
+	@$(BIN)/heatpack example/index.js
+
 build:
 	@$(MAKE) -j 8 $(LIB)
 
