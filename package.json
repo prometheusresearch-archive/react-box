@@ -1,0 +1,40 @@
+{
+  "name": "@prometheusresearch/react-box",
+  "version": "0.1.0",
+  "description": "Flexbox based layout primitives for React",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prometheusresearch/react-box.git"
+  },
+  "keywords": [
+    "react-component",
+    "flexbox",
+    "layout"
+  ],
+  "author": "Prometheus Research, LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prometheusresearch/react-box/issues"
+  },
+  "homepage": "https://github.com/prometheusresearch/react-box#readme",
+  "peerDependencies": {
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-eslint": "^4.1.1",
+    "babel-plugin-espower": "^1.0.0",
+    "eslint": "^1.3.1",
+    "eslint-plugin-react": "^3.3.2",
+    "mocha": "^2.3.2",
+    "power-assert": "^1.0.0",
+    "react": "^0.13.3"
+  },
+  "dependencies": {
+    "@prometheusresearch/react-stylesheet": "^0.2.1"
+  }
+}
