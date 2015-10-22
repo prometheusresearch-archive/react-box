@@ -2,5 +2,7 @@
  * @copyright 2015, Prometheus Research, LLC
  */
 
-export VBox from './VBox';
-export HBox from './HBox';
+import Box from './Box';
+
+export let HBox = Box.style({flexDirection: 'row'}, 'HBox');
+export let VBox = Box.style({flexDirection: 'column'}, 'VBox');
