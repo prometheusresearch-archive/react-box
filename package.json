@@ -37,6 +37,6 @@
     "react-heatpack": "github:andreypopp/react-heatpack"
   },
   "dependencies": {
-    "@prometheusresearch/react-stylesheet": "^0.2.1"
+    "@prometheusresearch/react-stylesheet": "^0.3.0"
   }
 }
