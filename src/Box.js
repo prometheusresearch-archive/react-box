@@ -3,7 +3,7 @@
  */
 
 import React, {PropTypes} from 'react';
-import {Style}            from '@prometheusresearch/react-stylesheet';
+import {DOMStylesheet} from '@prometheusresearch/react-stylesheet';
 
 const BOX_STYLES = {
   boxSizing: 'border-box',
@@ -28,7 +28,7 @@ const BOX_STYLES = {
  */
 export default class Box extends React.Component {
 
-  static stylesheet = Style.create(BOX_STYLES, 'Box');
+  static stylesheet = DOMStylesheet.createStylesheet(BOX_STYLES, 'Box');
 
   static propTypes = {
     /**
@@ -152,6 +152,16 @@ export default class Box extends React.Component {
     order: PropTypes.number,
 
     /**
+     * Sets `overflow` style property.
+     */
+    overflow: PropTypes.oneOf([
+      'auto',
+      'scroll',
+      'visible',
+      'hidden',
+    ]),
+
+    /**
      * Sets `top` style property.
      *
      * See https://css-tricks.com/almanac/properties/t/top/ for docs.
@@ -255,6 +265,7 @@ export default class Box extends React.Component {
       wrap: flexWrap,
       justifyContent,
       order,
+      overflow,
       style,
       state,
       Component,
@@ -278,6 +289,7 @@ export default class Box extends React.Component {
       flexWrap,
       justifyContent,
       order,
+      overflow,
       top, left, bottom, right,
       height, width,
       minWidth, minHeight,
@@ -296,7 +308,7 @@ export default class Box extends React.Component {
   }
 
   static style(stylesheet, displayName = this.displayName) {
-    stylesheet = this.stylesheet.override(stylesheet);
+    stylesheet = DOMStylesheet.overrideStylesheet(this.stylesheet, stylesheet);
     return class extends Box {
       static displayName = displayName;
       static stylesheet = stylesheet;
