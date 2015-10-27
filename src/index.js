@@ -3,6 +3,7 @@
  */
 
 import Box from './Box';
+import {styleComponent} from '@prometheusresearch/react-stylesheet';
 
-export let HBox = Box.style({flexDirection: 'row'}, 'HBox');
-export let VBox = Box.style({flexDirection: 'column'}, 'VBox');
+export let HBox = styleComponent(Box, {flexDirection: 'row'}, 'HBox');
+export let VBox = styleComponent(Box, {flexDirection: 'column'}, 'VBox');

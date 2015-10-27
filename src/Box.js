@@ -3,7 +3,7 @@
  */
 
 import React, {PropTypes} from 'react';
-import {DOMStylesheet} from '@prometheusresearch/react-stylesheet';
+import * as DOMStylesheet from '@prometheusresearch/react-stylesheet/lib/DOMStylesheet';
 
 const BOX_STYLES = {
   boxSizing: 'border-box',
