@@ -3,7 +3,7 @@
  */
 
 import React, {PropTypes} from 'react';
-import * as DOMStylesheet from '@prometheusresearch/react-stylesheet/lib/DOMStylesheet';
+import * as DOMStylesheet from 'react-stylesheet/lib/DOMStylesheet';
 
 const BOX_STYLES = {
   boxSizing: 'border-box',
@@ -237,9 +237,9 @@ export default class Box extends React.Component {
     style: PropTypes.object,
 
     /**
-     * Styleable state bag.
+     * Styleable variant.
      */
-    state: PropTypes.object,
+    variant: PropTypes.object,
 
     /**
      * Component to render.
@@ -267,7 +267,7 @@ export default class Box extends React.Component {
       order,
       overflow,
       style,
-      state,
+      variant,
       Component,
       top, left, bottom, right,
       height, width,
@@ -295,7 +295,7 @@ export default class Box extends React.Component {
       minWidth, minHeight,
       maxWidth, maxHeight,
     };
-    let className = this.constructor.stylesheet.asClassName(state);
+    let className = this.constructor.stylesheet.asClassName(variant);
     return <Component style={style} className={className} {...props} />;
   }
 

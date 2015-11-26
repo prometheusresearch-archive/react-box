@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/prometheusresearch/react-box#readme",
   "peerDependencies": {
-    "react": ">= 0.13.0, < 0.15.0"
+    "react": "^0.14.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
@@ -33,10 +33,11 @@
     "mocha": "^2.3.2",
     "normalize.css": "^3.0.3",
     "power-assert": "^1.0.0",
-    "react": ">= 0.13.0, < 0.15.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
     "react-heatpack": "github:andreypopp/react-heatpack"
   },
   "dependencies": {
-    "@prometheusresearch/react-stylesheet": "^0.3.0"
+    "react-stylesheet": "^0.6.0"
   }
 }
