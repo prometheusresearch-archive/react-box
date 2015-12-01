@@ -232,6 +232,76 @@ export default class Box extends React.Component {
     maxHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 
     /**
+     * Sets `margin` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/m/margin/ for docs.
+     */
+    margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * Sets `margin-right` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/m/margin-right/ for docs.
+     */
+    marginRight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * Sets `margin-left` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/m/margin-left/ for docs.
+     */
+    marginLeft: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * Sets `margin-top` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/m/margin-top/ for docs.
+     */
+    marginTop: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * Sets `margin-bottom` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/m/margin-bottom/ for docs.
+     */
+    marginBottom: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * Sets `padding` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/p/padding/ for docs.
+     */
+    padding: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * Sets `padding-right` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/p/padding-right/ for docs.
+     */
+    paddingRight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * Sets `padding-left` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/p/padding-left/ for docs.
+     */
+    paddingLeft: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * Sets `padding-top` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/p/padding-top/ for docs.
+     */
+    paddingTop: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * Sets `padding-bottom` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/p/padding-bottom/ for docs.
+     */
+    paddingBottom: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
      * Extra CSS style properties.
      */
     style: PropTypes.object,
@@ -273,6 +343,8 @@ export default class Box extends React.Component {
       height, width,
       minWidth, minHeight,
       maxWidth, maxHeight,
+      margin, marginRight, marginLeft, marginTop, marginBottom,
+      padding, paddingRight, paddingLeft, paddingTop, paddingBottom,
       ...props
     } = this.props;
     style = {
@@ -294,6 +366,8 @@ export default class Box extends React.Component {
       height, width,
       minWidth, minHeight,
       maxWidth, maxHeight,
+      margin, marginRight, marginLeft, marginTop, marginBottom,
+      padding, paddingRight, paddingLeft, paddingTop, paddingBottom,
     };
     let className = this.constructor.stylesheet.asClassName(variant);
     return <Component style={style} className={className} {...props} />;
