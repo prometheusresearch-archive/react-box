@@ -38,6 +38,6 @@
     "react-heatpack": "github:andreypopp/react-heatpack"
   },
   "dependencies": {
-    "react-stylesheet": "^0.6.0"
+    "react-dom-stylesheet": "^0.1.0"
   }
 }
