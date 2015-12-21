@@ -5,13 +5,13 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import assert from 'power-assert';
-import {styleComponent} from '@prometheusresearch/react-stylesheet';
+import {style} from 'react-dom-stylesheet';
 import Box from '../Box';
 
 describe('Box', function() {
 
   it('allows to style component', function() {
-    let Styled = styleComponent(Box, {color: 'red'});
+    let Styled = style(Box, {color: 'red'});
     assert(Styled.stylesheet.style.base.display === 'flex');
     assert(Styled.stylesheet.style.base.color === 'red');
   });

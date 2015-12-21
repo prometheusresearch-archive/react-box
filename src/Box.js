@@ -3,23 +3,7 @@
  */
 
 import React, {PropTypes} from 'react';
-import * as DOMStylesheet from 'react-stylesheet/lib/DOMStylesheet';
-
-const BOX_STYLES = {
-  boxSizing: 'border-box',
-  position: 'relative',
-
-  margin: 0,
-  padding: 0,
-
-  display: 'flex',
-  alignItems: 'stretch',
-  flexBasis: 'auto',
-  flexShrink: 0,
-
-  minHeight: 0,
-  minWidth: 0
-};
+import {create} from 'react-dom-stylesheet';
 
 /**
  * Flexbox layout primitive.
@@ -28,7 +12,21 @@ const BOX_STYLES = {
  */
 export default class Box extends React.Component {
 
-  static stylesheet = DOMStylesheet.createStylesheet(BOX_STYLES, 'Box');
+  static stylesheet = create({
+    boxSizing: 'border-box',
+    position: 'relative',
+
+    margin: 0,
+    padding: 0,
+
+    display: 'flex',
+    alignItems: 'stretch',
+    flexBasis: 'auto',
+    flexShrink: 0,
+
+    minHeight: 0,
+    minWidth: 0
+  }, 'Box');
 
   static propTypes = {
     /**
@@ -382,10 +380,9 @@ export default class Box extends React.Component {
   }
 
   static style(stylesheet, displayName = this.displayName) {
-    stylesheet = DOMStylesheet.overrideStylesheet(this.stylesheet, stylesheet);
     return class extends Box {
       static displayName = displayName;
-      static stylesheet = stylesheet;
+      static stylesheet = this.stylesheet.override(stylesheet);
     };
   }
 }
