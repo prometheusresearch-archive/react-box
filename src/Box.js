@@ -346,7 +346,6 @@ export default class Box extends React.Component {
       ...props
     } = this.props;
     style = {
-      ...style,
       alignContent,
       alignItems,
       alignSelf,
@@ -366,6 +365,7 @@ export default class Box extends React.Component {
       maxWidth, maxHeight,
       margin, marginRight, marginLeft, marginTop, marginBottom,
       padding, paddingRight, paddingLeft, paddingTop, paddingBottom,
+      ...style,
     };
     let className = this.constructor.stylesheet.asClassName(variant);
     return <Component style={style} className={className} {...props} />;
