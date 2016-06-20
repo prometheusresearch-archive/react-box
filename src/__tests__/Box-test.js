@@ -12,7 +12,7 @@ describe('Box', function() {
 
   it('allows to style component', function() {
     let Styled = style(Box, {color: 'red'});
-    assert(Styled.stylesheet.style.base.display === 'flex');
+    assert(/flex/.exec(Styled.stylesheet.style.base.display));
     assert(Styled.stylesheet.style.base.color === 'red');
   });
 
