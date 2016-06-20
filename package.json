@@ -33,8 +33,7 @@
     "mocha": "^2.3.2",
     "normalize.css": "^3.0.3",
     "react": "^0.14.0",
-    "react-dom": "^0.14.0",
-    "react-heatpack": "github:andreypopp/react-heatpack"
+    "react-dom": "^0.14.0"
   },
   "dependencies": {
     "react-dom-stylesheet": "^0.5.2"
