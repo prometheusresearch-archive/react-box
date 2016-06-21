@@ -368,7 +368,7 @@ export default class Box extends React.Component {
       ...style,
     };
     let className = this.constructor.stylesheet.asClassName(variant);
-    return <Component style={style} className={className} {...props} />;
+    return <Component className={className} {...props} style={style} />;
   }
 
   componentDidMount() {
