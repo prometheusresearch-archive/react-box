@@ -30,6 +30,7 @@
     "babel-preset-prometheusresearch": "^0.1.0",
     "eslint": "^2.13.0",
     "eslint-config-prometheusresearch": "^0.2.0",
+    "eslint-plugin-react": "^6.1.2",
     "mocha": "^2.3.2",
     "normalize.css": "^3.0.3",
     "power-assert": "^1.4.1",
