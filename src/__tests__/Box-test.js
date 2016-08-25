@@ -16,9 +16,9 @@ describe('Box', function() {
     assert(Styled.stylesheet.style.base.color === 'red');
   });
 
-  it('accepts flexbox related style as props', function() {
+  it('accepts flex shorthand', function() {
     let markup = ReactDOMServer.renderToString(<Box flex={1} />);
-    assert(/style="flex:1;"/.exec(markup));
+    assert(/style="flex-grow:1;"/.exec(markup));
   });
 
 });
