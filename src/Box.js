@@ -1,9 +1,24 @@
 /**
- * @copyright 2015, Prometheus Research, LLC
+ * @copyright 2015+, Prometheus Research, LLC
+ * @flow
  */
 
 import React, {PropTypes} from 'react';
 import {create} from 'react-dom-stylesheet';
+
+type SizeUnit = string | number;
+
+function choose(a?: SizeUnit, b?: SizeUnit, c?: SizeUnit): SizeUnit | void {
+  if (a != null) {
+    return a;
+  } else if (b != null) {
+    return b;
+  } else if (c != null) {
+    return c;
+  } else {
+    return undefined;
+  }
+}
 
 /**
  * Flexbox layout primitive.
@@ -237,6 +252,16 @@ export default class Box extends React.Component {
     margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 
     /**
+     * Sets `margin-right` and `margin-left` style properties.
+     */
+    marginH: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * Sets `margin-top` and `margin-bottom` style properties.
+     */
+    marginV: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
      * Sets `margin-right` style property.
      *
      * See https://css-tricks.com/almanac/properties/m/margin-right/ for docs.
@@ -270,6 +295,16 @@ export default class Box extends React.Component {
      * See https://css-tricks.com/almanac/properties/p/padding/ for docs.
      */
     padding: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * Sets `padding-right` and `padding-left` style properties.
+     */
+    paddingH: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * Sets `padding-top` and `padding-bottom` style properties.
+     */
+    paddingV: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 
     /**
      * Sets `padding-right` style property.
@@ -341,11 +376,16 @@ export default class Box extends React.Component {
       height, width,
       minWidth, minHeight,
       maxWidth, maxHeight,
-      margin, marginRight, marginLeft, marginTop, marginBottom,
-      padding, paddingRight, paddingLeft, paddingTop, paddingBottom,
+      margin,
+      marginH, marginV,
+      marginRight, marginLeft, marginTop, marginBottom,
+      padding,
+      paddingH, paddingV,
+      paddingRight, paddingLeft, paddingTop, paddingBottom,
       ...props
     } = this.props;
     style = {
+
       alignContent,
       alignItems,
       alignSelf,
@@ -358,13 +398,29 @@ export default class Box extends React.Component {
       flexWrap,
       justifyContent,
       order,
+
       overflow,
-      top, left, bottom, right,
+
+      top,
+      left,
+      bottom,
+      right,
+
       height, width,
+
       minWidth, minHeight,
       maxWidth, maxHeight,
-      margin, marginRight, marginLeft, marginTop, marginBottom,
-      padding, paddingRight, paddingLeft, paddingTop, paddingBottom,
+
+      marginLeft: choose(marginLeft, marginH, margin),
+      marginRight: choose(marginRight, marginH, margin),
+      marginTop: choose(marginTop, marginV, margin),
+      marginBottom: choose(marginBottom, marginV, margin),
+
+      paddingLeft: choose(paddingLeft, paddingH, padding),
+      paddingRight: choose(paddingRight, paddingH, padding),
+      paddingTop: choose(paddingTop, paddingV, padding),
+      paddingBottom: choose(paddingBottom, paddingV, padding),
+
       ...style,
     };
     let className = this.constructor.stylesheet.asClassName(variant);
