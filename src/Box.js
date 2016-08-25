@@ -393,7 +393,7 @@ export default class Box extends React.Component {
       flexDirection,
       flexFlow,
       flexGrow: choose(flexGrow, flex),
-      flexShrink,
+      flexShrink: choose(flexShrink, flex),
       flexWrap,
       justifyContent,
       order,
