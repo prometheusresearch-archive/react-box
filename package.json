@@ -38,6 +38,6 @@
     "react-dom": "^0.14.0 || ^15.0.0"
   },
   "dependencies": {
-    "react-dom-stylesheet": "^0.6.0"
+    "react-dom-stylesheet": "^0.7.0"
   }
 }
