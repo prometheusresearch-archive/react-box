@@ -1,6 +1,6 @@
 {
   "name": "@prometheusresearch/react-box",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Flexbox based layout primitives for React",
   "main": "lib/index.js",
   "scripts": {
