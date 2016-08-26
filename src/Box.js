@@ -166,12 +166,26 @@ export default class Box extends React.Component {
 
     /**
      * Sets `overflow` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/o/overflow/ for docs.
      */
     overflow: PropTypes.oneOf([
       'auto',
       'scroll',
       'visible',
       'hidden',
+    ]),
+
+    /**
+     * Sets `position` style property.
+     *  See https://css-tricks.com/almanac/properties/p/position/ for docs
+     */
+    position: PropTypes.oneOf([
+      'static',
+      'relative',
+      'absolute',
+      'fixed',
+      'sticky',
     ]),
 
     /**
@@ -372,6 +386,7 @@ export default class Box extends React.Component {
       style,
       variant,
       Component,
+      position,
       top, left, bottom, right,
       height, width,
       minWidth, minHeight,
@@ -399,6 +414,8 @@ export default class Box extends React.Component {
       order,
 
       overflow,
+
+      position,
 
       top,
       left,
