@@ -7,7 +7,7 @@ exports[`test accepts flex shorthand 1`] = `
       "alignItems": undefined,
       "alignSelf": undefined,
       "bottom": undefined,
-      "flexBasis": 0,
+      "flexBasis": "0%",
       "flexDirection": undefined,
       "flexFlow": undefined,
       "flexGrow": 1,

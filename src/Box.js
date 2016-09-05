@@ -404,7 +404,7 @@ export default class Box extends React.Component {
       alignContent,
       alignItems,
       alignSelf,
-      flexBasis: flexBasis == null && flex != null ? 0 : flexBasis,
+      flexBasis: flexBasis == null && flex != null ? '0%' : flexBasis,
       flexDirection,
       flexFlow,
       flexGrow: choose(flexGrow, flex),
