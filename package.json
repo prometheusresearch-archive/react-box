@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/prometheusresearch/react-box#readme",
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0"
+    "react": "^0.14.0 || ^15.0.0",
+    "react-dom-stylesheet": "^0.8.0"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -32,13 +33,12 @@
     "eslint": "^2.13.0",
     "eslint-config-prometheusresearch": "^0.2.0",
     "eslint-plugin-react": "^6.1.2",
+    "flow-bin": "^0.32.0",
     "jest-cli": "^15.1.1",
     "normalize.css": "^3.0.3",
     "react": "^0.14.0 || ^15.0.0",
     "react-dom": "^0.14.0 || ^15.0.0",
+    "react-dom-stylesheet": "^0.8.0",
     "react-test-renderer": "^15.3.1"
-  },
-  "dependencies": {
-    "react-dom-stylesheet": "^0.7.0"
   }
 }

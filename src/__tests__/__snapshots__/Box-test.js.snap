@@ -1,6 +1,6 @@
 exports[`test accepts flex shorthand 1`] = `
 <div
-  className="Style_Box1"
+  className="Box--2545197522"
   style={
     Object {
       "alignContent": undefined,
@@ -40,7 +40,7 @@ exports[`test accepts flex shorthand 1`] = `
 
 exports[`test allows to style component 1`] = `
 <div
-  className="Style2"
+  className="Box--3355753667"
   style={
     Object {
       "alignContent": undefined,

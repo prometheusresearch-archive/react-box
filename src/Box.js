@@ -3,6 +3,8 @@
  * @flow
  */
 
+import type {DOMStylesheet} from 'react-dom-stylesheet';
+
 import React, {PropTypes} from 'react';
 import {create} from 'react-dom-stylesheet';
 
@@ -42,6 +44,130 @@ export default class Box extends React.Component {
     minHeight: 0,
     minWidth: 0
   }, 'Box');
+
+  props: {
+
+    alignContent:
+        'flex-start'
+      | 'flex-end'
+      | 'center'
+      | 'space-between'
+      | 'space-around'
+      | 'stretch';
+
+    alignItems:
+        'flex-start'
+      | 'flex-end'
+      | 'center'
+      | 'baseline'
+      | 'stretch';
+
+    alignSelf:
+        'auto'
+      | 'flex-start'
+      | 'flex-end'
+      | 'center'
+      | 'baseline'
+      | 'stretch';
+
+    flex: number | string;
+
+    basis: number | string;
+
+    direction:
+        'row'
+      | 'row-reverse'
+      | 'column'
+      | 'column-reverse';
+
+    flow: number | string;
+
+    grow: number | string;
+
+    shrink: number | string;
+
+    wrap:
+        'nowrap'
+      | 'wrap'
+      | 'wrap-reverse';
+
+    justifyContent:
+        'flex-start'
+      | 'flex-end'
+      | 'center'
+      | 'space-between'
+      | 'space-around';
+
+    order: number;
+
+    overflow:
+        'auto'
+      | 'scroll'
+      | 'visible'
+      | 'hidden';
+
+    position:
+        'static'
+      | 'relative'
+      | 'absolute'
+      | 'fixed'
+      | 'sticky';
+
+    top: number | string;
+
+    left: number | string;
+
+    bottom: number | string;
+
+    right: number | string;
+
+    height: number | string;
+
+    width: number | string;
+
+    minWidth: number | string;
+
+    minHeight: number | string;
+
+    maxWidth: number | string;
+
+    maxHeight: number | string;
+
+    margin: number | string;
+
+    marginH: number | string;
+
+    marginV: number | string;
+
+    marginRight: number | string;
+
+    marginLeft: number | string;
+
+    marginTop: number | string;
+
+    marginBottom: number | string;
+
+    padding: number | string;
+
+    paddingH: number | string;
+
+    paddingV: number | string;
+
+    paddingRight: number | string;
+
+    paddingLeft: number | string;
+
+    paddingTop: number | string;
+
+    paddingBottom: number | string;
+
+    style: Object;
+
+    variant: Object;
+
+    Component: Function | string;
+
+  };
 
   static propTypes = {
     /**
@@ -451,7 +577,7 @@ export default class Box extends React.Component {
     this.constructor.stylesheet.dispose();
   }
 
-  static style(stylesheet, displayName = this.displayName) {
+  static style(stylesheet: DOMStylesheet, displayName: string) {
     return class extends Box {
       static displayName = displayName;
       static stylesheet = this.stylesheet.override(stylesheet);
