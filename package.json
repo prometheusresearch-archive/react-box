@@ -33,9 +33,7 @@
     "eslint-config-prometheusresearch": "^0.2.0",
     "eslint-plugin-react": "^6.1.2",
     "jest-cli": "^15.1.1",
-    "mocha": "^2.3.2",
     "normalize.css": "^3.0.3",
-    "power-assert": "^1.4.1",
     "react": "^0.14.0 || ^15.0.0",
     "react-dom": "^0.14.0 || ^15.0.0",
     "react-test-renderer": "^15.3.1"
