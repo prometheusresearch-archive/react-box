@@ -18,7 +18,7 @@ describe('Box', function() {
 
   it('accepts flex shorthand', function() {
     let markup = ReactDOMServer.renderToString(<Box flex={1} />);
-    assert(/style="flex-grow:1;flex-shrink:1;"/.exec(markup));
+    assert(/style="flex-basis:0;flex-grow:1;flex-shrink:0;"/.exec(markup));
   });
 
 });
