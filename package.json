@@ -29,6 +29,7 @@
     "babel-cli": "^6.10.1",
     "babel-core": "^6.9.1",
     "babel-jest": "^15.0.0",
+    "babel-plugin-flow-react-proptypes": "^0.9.6",
     "babel-preset-prometheusresearch": "^0.1.0",
     "eslint": "^2.13.0",
     "eslint-config-prometheusresearch": "^0.2.0",
