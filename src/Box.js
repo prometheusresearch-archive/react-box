@@ -5,7 +5,7 @@
 
 import type {DOMStylesheet} from 'react-dom-stylesheet';
 
-import React, {PropTypes} from 'react';
+import React, {PropTypes, Component} from 'react';
 import {create} from 'react-dom-stylesheet';
 
 type SizeUnit = string | number;
@@ -27,7 +27,7 @@ function choose(a?: SizeUnit, b?: SizeUnit, c?: SizeUnit): SizeUnit | void {
  *
  * See https://css-tricks.com/snippets/css/a-guide-to-flexbox/ for docs.
  */
-export default class Box extends React.Component {
+export default class Box extends Component {
 
   static stylesheet = create({
     boxSizing: 'border-box',
