@@ -13,10 +13,10 @@ lint:
 	@$(BIN)/eslint src
 
 test:
-	@NODE_ENV=test $(NODE) $(BIN)/mocha --compilers js:babel-core/register -- $(TESTS)
+	@$(BIN)/jest
 
 ci:
-	@NODE_ENV=test $(NODE) $(BIN)/mocha --compilers js:babel-core/register --watch -- $(TESTS) 
+	@$(BIN)/jest --watch
 
 version-major version-minor version-patch: lint test
 	@npm version $(@:version-%=%)
