@@ -8,9 +8,7 @@ import type {DOMStylesheet} from 'react-dom-stylesheet';
 import React, {PropTypes, Component} from 'react';
 import {create} from 'react-dom-stylesheet';
 
-type SizeUnit = string | number;
-
-function choose(a?: SizeUnit, b?: SizeUnit, c?: SizeUnit): SizeUnit | void {
+function choose<T>(a?: T, b?: T, c?: T): T | void {
   if (a != null) {
     return a;
   } else if (b != null) {
