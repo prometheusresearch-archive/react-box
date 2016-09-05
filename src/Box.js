@@ -5,7 +5,7 @@
 
 import type {DOMStylesheet} from 'react-dom-stylesheet';
 
-import React, {PropTypes, Component} from 'react';
+import React, {Component} from 'react';
 import {create} from 'react-dom-stylesheet';
 
 function choose<T>(a?: T, b?: T, c?: T): T | void {
@@ -45,7 +45,12 @@ export default class Box extends Component {
 
   props: {
 
-    alignContent:
+    /**
+     * Sets `align-content` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/a/align-content/ for docs.
+     */
+    alignContent?:
         'flex-start'
       | 'flex-end'
       | 'center'
@@ -53,14 +58,24 @@ export default class Box extends Component {
       | 'space-around'
       | 'stretch';
 
-    alignItems:
+    /**
+     * Sets `align-items` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/a/align-items/ for docs.
+     */
+    alignItems?:
         'flex-start'
       | 'flex-end'
       | 'center'
       | 'baseline'
       | 'stretch';
 
-    alignSelf:
+    /**
+     * Sets `align-self` style property.
+     *
+     * See https://css-tricks.com/almanac/properties/a/align-self/ for docs.
+     */
+    alignSelf?:
         'auto'
       | 'flex-start'
       | 'flex-end'
@@ -68,153 +83,10 @@ export default class Box extends Component {
       | 'baseline'
       | 'stretch';
 
-    flex: number | string;
-
-    basis: number | string;
-
-    direction:
-        'row'
-      | 'row-reverse'
-      | 'column'
-      | 'column-reverse';
-
-    flow: number | string;
-
-    grow: number | string;
-
-    shrink: number | string;
-
-    wrap:
-        'nowrap'
-      | 'wrap'
-      | 'wrap-reverse';
-
-    justifyContent:
-        'flex-start'
-      | 'flex-end'
-      | 'center'
-      | 'space-between'
-      | 'space-around';
-
-    order: number;
-
-    overflow:
-        'auto'
-      | 'scroll'
-      | 'visible'
-      | 'hidden';
-
-    position:
-        'static'
-      | 'relative'
-      | 'absolute'
-      | 'fixed'
-      | 'sticky';
-
-    top: number | string;
-
-    left: number | string;
-
-    bottom: number | string;
-
-    right: number | string;
-
-    height: number | string;
-
-    width: number | string;
-
-    minWidth: number | string;
-
-    minHeight: number | string;
-
-    maxWidth: number | string;
-
-    maxHeight: number | string;
-
-    margin: number | string;
-
-    marginH: number | string;
-
-    marginV: number | string;
-
-    marginRight: number | string;
-
-    marginLeft: number | string;
-
-    marginTop: number | string;
-
-    marginBottom: number | string;
-
-    padding: number | string;
-
-    paddingH: number | string;
-
-    paddingV: number | string;
-
-    paddingRight: number | string;
-
-    paddingLeft: number | string;
-
-    paddingTop: number | string;
-
-    paddingBottom: number | string;
-
-    style: Object;
-
-    variant: Object;
-
-    Component: Function | string;
-
-  };
-
-  static propTypes = {
     /**
-     * Sets `align-content` style property.
-     *
-     * See https://css-tricks.com/almanac/properties/a/align-content/ for docs.
+     * Shortcut for grow={v} shrink={0} basis="0%".
      */
-    alignContent: PropTypes.oneOf([
-      'flex-start',
-      'flex-end',
-      'center',
-      'space-between',
-      'space-around',
-      'stretch'
-    ]),
-
-    /**
-     * Sets `align-items` style property.
-     *
-     * See https://css-tricks.com/almanac/properties/a/align-items/ for docs.
-     */
-    alignItems: PropTypes.oneOf([
-      'flex-start',
-      'flex-end',
-      'center',
-      'baseline',
-      'stretch'
-    ]),
-
-    /**
-     * Sets `align-self` style property.
-     *
-     * See https://css-tricks.com/almanac/properties/a/align-self/ for docs.
-     */
-    alignSelf: PropTypes.oneOf([
-      'auto',
-      'flex-start',
-      'flex-end',
-      'center',
-      'baseline',
-      'stretch'
-    ]),
-
-    /**
-     * Sets `flex` style property.
-     *
-     * See https://css-tricks.com/almanac/properties/f/flex/ for docs.
-     */
-    flex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    flex?: number | string;
 
     /**
      *
@@ -222,274 +94,266 @@ export default class Box extends Component {
      *
      * See https://css-tricks.com/almanac/properties/f/flex-basis/ for docs.
      */
-    basis: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    basis?: number | string;
 
     /**
      * Sets `flex-direction` style property.
      *
      * See https://css-tricks.com/almanac/properties/f/flex-direction/ for docs.
      */
-    direction: PropTypes.oneOf([
-      'row',
-      'row-reverse',
-      'column',
-      'column-reverse'
-    ]),
+    direction?:
+        'row'
+      | 'row-reverse'
+      | 'column'
+      | 'column-reverse';
 
     /**
      * Sets `flex-flow` style property.
      *
      * See https://css-tricks.com/almanac/properties/f/flex-flow/ for docs.
      */
-    flow: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    flow?: number | string;
 
     /**
      * Sets `flex-grow` style property.
      *
      * See https://css-tricks.com/almanac/properties/f/flex-grow/ for docs.
      */
-    grow: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    grow?: number | string;
 
     /**
      * Sets `flex-shrink` style property.
      *
      * See https://css-tricks.com/almanac/properties/f/flex-shrink/ for docs.
      */
-    shrink: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    shrink?: number | string;
 
     /**
      * Sets `flex-wrap` style property.
      *
      * See https://css-tricks.com/almanac/properties/f/flex-wrap/ for docs.
      */
-    wrap: PropTypes.oneOf([
-      'nowrap',
-      'wrap',
-      'wrap-reverse'
-    ]),
+    wrap?:
+        'nowrap'
+      | 'wrap'
+      | 'wrap-reverse';
 
     /**
      * Sets `justify-content` style property.
      *
      * See https://css-tricks.com/almanac/properties/j/justify-content/ for docs.
      */
-    justifyContent: PropTypes.oneOf([
-      'flex-start',
-      'flex-end',
-      'center',
-      'space-between',
-      'space-around'
-    ]),
+    justifyContent?:
+        'flex-start'
+      | 'flex-end'
+      | 'center'
+      | 'space-between'
+      | 'space-around';
 
     /**
      * Sets `order` style property.
      *
      * See https://css-tricks.com/almanac/properties/o/order/ for docs.
      */
-    order: PropTypes.number,
+    order?: number;
 
     /**
      * Sets `overflow` style property.
      *
      * See https://css-tricks.com/almanac/properties/o/overflow/ for docs.
      */
-    overflow: PropTypes.oneOf([
-      'auto',
-      'scroll',
-      'visible',
-      'hidden',
-    ]),
+    overflow?:
+        'auto'
+      | 'scroll'
+      | 'visible'
+      | 'hidden';
 
     /**
      * Sets `position` style property.
      *  See https://css-tricks.com/almanac/properties/p/position/ for docs
      */
-    position: PropTypes.oneOf([
-      'static',
-      'relative',
-      'absolute',
-      'fixed',
-      'sticky',
-    ]),
+    position?:
+        'static'
+      | 'relative'
+      | 'absolute'
+      | 'fixed'
+      | 'sticky';
 
     /**
      * Sets `top` style property.
      *
      * See https://css-tricks.com/almanac/properties/t/top/ for docs.
      */
-    top: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    top?: number | string;
 
     /**
      * Sets `left` style property.
      *
      * See https://css-tricks.com/almanac/properties/l/left/ for docs.
      */
-    left: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    left?: number | string;
 
     /**
      * Sets `bottom` style property.
      *
      * See https://css-tricks.com/almanac/properties/b/bottom/ for docs.
      */
-    bottom: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    bottom?: number | string;
 
     /**
      * Sets `right` style property.
      *
      * See https://css-tricks.com/almanac/properties/r/right/ for docs.
      */
-    right: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    right?: number | string;
 
     /**
      * Sets `height` style property.
      *
      * See https://css-tricks.com/almanac/properties/h/height/ for docs.
      */
-    height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    height?: number | string;
 
     /**
      * Sets `width` style property.
      *
      * See https://css-tricks.com/almanac/properties/w/width/ for docs.
      */
-    width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    width?: number | string;
 
     /**
      * Sets `min-width` style property.
      *
      * See https://css-tricks.com/almanac/properties/m/min-width/ for docs.
      */
-    minWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    minWidth?: number | string;
 
     /**
      * Sets `min-height` style property.
      *
      * See https://css-tricks.com/almanac/properties/m/min-height/ for docs.
      */
-    minHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    minHeight?: number | string;
 
     /**
      * Sets `max-width` style property.
      *
      * See https://css-tricks.com/almanac/properties/m/max-width/ for docs.
      */
-    maxWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    maxWidth?: number | string;
 
     /**
      * Sets `max-height` style property.
      *
      * See https://css-tricks.com/almanac/properties/m/max-height/ for docs.
      */
-    maxHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    maxHeight?: number | string;
 
     /**
      * Sets `margin` style property.
      *
      * See https://css-tricks.com/almanac/properties/m/margin/ for docs.
      */
-    margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    margin?: number | string;
 
     /**
      * Sets `margin-right` and `margin-left` style properties.
      */
-    marginH: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    marginH?: number | string;
 
     /**
      * Sets `margin-top` and `margin-bottom` style properties.
      */
-    marginV: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    marginV?: number | string;
 
     /**
      * Sets `margin-right` style property.
      *
      * See https://css-tricks.com/almanac/properties/m/margin-right/ for docs.
      */
-    marginRight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    marginRight?: number | string;
 
     /**
      * Sets `margin-left` style property.
      *
      * See https://css-tricks.com/almanac/properties/m/margin-left/ for docs.
      */
-    marginLeft: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    marginLeft?: number | string;
 
     /**
      * Sets `margin-top` style property.
      *
      * See https://css-tricks.com/almanac/properties/m/margin-top/ for docs.
      */
-    marginTop: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    marginTop?: number | string;
 
     /**
      * Sets `margin-bottom` style property.
      *
      * See https://css-tricks.com/almanac/properties/m/margin-bottom/ for docs.
      */
-    marginBottom: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    marginBottom?: number | string;
 
     /**
      * Sets `padding` style property.
      *
      * See https://css-tricks.com/almanac/properties/p/padding/ for docs.
      */
-    padding: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    padding?: number | string;
 
     /**
      * Sets `padding-right` and `padding-left` style properties.
      */
-    paddingH: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    paddingH?: number | string;
 
     /**
      * Sets `padding-top` and `padding-bottom` style properties.
      */
-    paddingV: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    paddingV?: number | string;
 
     /**
      * Sets `padding-right` style property.
      *
      * See https://css-tricks.com/almanac/properties/p/padding-right/ for docs.
      */
-    paddingRight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    paddingRight?: number | string;
 
     /**
      * Sets `padding-left` style property.
      *
      * See https://css-tricks.com/almanac/properties/p/padding-left/ for docs.
      */
-    paddingLeft: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    paddingLeft?: number | string;
 
     /**
      * Sets `padding-top` style property.
      *
      * See https://css-tricks.com/almanac/properties/p/padding-top/ for docs.
      */
-    paddingTop: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    paddingTop?: number | string;
 
     /**
      * Sets `padding-bottom` style property.
      *
      * See https://css-tricks.com/almanac/properties/p/padding-bottom/ for docs.
      */
-    paddingBottom: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    paddingBottom?: number | string;
 
     /**
      * Extra CSS style properties.
      */
-    style: PropTypes.object,
+    style?: Object;
 
     /**
      * Styleable variant.
      */
-    variant: PropTypes.object,
+    variant?: Object;
 
     /**
      * Component to render.
      */
-    Component: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-  };
+    Component?: Function | string;
 
-  static defaultProps = {
-    Component: 'div'
   };
 
   render() {
@@ -509,7 +373,7 @@ export default class Box extends Component {
       overflow,
       style,
       variant,
-      Component,
+      Component = 'div',
       position,
       top, left, bottom, right,
       height, width,
