@@ -94,11 +94,6 @@ export default class Box extends Component {
       | 'stretch';
 
     /**
-     * Shortcut for grow={v} shrink={0} basis="0%".
-     */
-    flex?: number | string;
-
-    /**
      *
      * Sets `flex-basis` style property.
      *
@@ -371,7 +366,6 @@ export default class Box extends Component {
       alignContent,
       alignItems,
       alignSelf,
-      flex,
       basis: flexBasis,
       direction: flexDirection,
       flow: flexFlow,
@@ -403,11 +397,11 @@ export default class Box extends Component {
       alignContent,
       alignItems,
       alignSelf,
-      flexBasis: flexBasis == null && flex != null ? '0%' : flexBasis,
+      flexBasis,
       flexDirection,
       flexFlow,
-      flexGrow: choose(flexGrow, flex),
-      flexShrink: flexShrink == null && flex != null ? 0 : flexShrink,
+      flexGrow,
+      flexShrink,
       flexWrap,
       justifyContent,
       order,

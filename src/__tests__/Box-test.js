@@ -34,8 +34,3 @@ it('allows to style component', function() {
   let stylesheet = getStylesheetFromTree(tree);
   expect(stylesheet).toMatchSnapshot();
 });
-
-it('accepts flex shorthand', function() {
-  let tree = Renderer.create(<Box flex={1} />);
-  expect(tree).toMatchSnapshot();
-});
