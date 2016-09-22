@@ -4,7 +4,18 @@
  */
 
 import Box from './Box';
-import {style} from 'react-dom-stylesheet';
+import {style} from 'react-stylesheet';
 
-export let HBox = style(Box, {flexDirection: 'row'}, 'HBox');
-export let VBox = style(Box, {flexDirection: 'column'}, 'VBox');
+export let HBox = style(Box, {
+  displayName: 'HBox',
+  base: {
+    flexDirection: 'row'
+  }
+});
+
+export let VBox = style(Box, {
+  displayName: 'VBox',
+  base: {
+    flexDirection: 'column'
+  }
+});

@@ -1,6 +1,6 @@
 exports[`test accepts flex shorthand 1`] = `
 <div
-  className="Box--2545197522"
+  className="Box-3102619777"
   style={
     Object {
       "alignContent": undefined,
@@ -40,7 +40,7 @@ exports[`test accepts flex shorthand 1`] = `
 
 exports[`test allows to style component 1`] = `
 <div
-  className="Box--3355753667"
+  className="Box-993730418"
   style={
     Object {
       "alignContent": undefined,
@@ -76,4 +76,187 @@ exports[`test allows to style component 1`] = `
       "width": undefined
     }
   } />
+`;
+
+exports[`test allows to style component 2`] = `
+Stylesheet {
+  "css": "
+    box-sizing:border-box;
+    position:relative;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+    display:-webkit-box;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:-webkit-flex;
+    display:flex;
+    align-items:stretch;
+    flex-basis:auto;
+    flex-shrink:0;
+    min-height:0;
+    min-width:0;
+    -moz-box-sizing:border-box;
+    -webkit-align-items:stretch;
+    -ms-flex-align:stretch;
+    -webkit-box-align:stretch;
+    -webkit-flex-basis:auto;
+    -ms-preferred-size:auto;
+    -webkit-flex-shrink:0;
+    -ms-flex-negative:0;
+    ",
+  "name": "Box"
+}
+`;
+
+exports[`test render <HBox /> 1`] = `
+<div
+  className="HBox-3901395148"
+  style={
+    Object {
+      "alignContent": undefined,
+      "alignItems": undefined,
+      "alignSelf": undefined,
+      "bottom": undefined,
+      "flexBasis": undefined,
+      "flexDirection": undefined,
+      "flexFlow": undefined,
+      "flexGrow": undefined,
+      "flexShrink": undefined,
+      "flexWrap": undefined,
+      "height": undefined,
+      "justifyContent": undefined,
+      "left": undefined,
+      "marginBottom": undefined,
+      "marginLeft": undefined,
+      "marginRight": undefined,
+      "marginTop": undefined,
+      "maxHeight": undefined,
+      "maxWidth": undefined,
+      "minHeight": undefined,
+      "minWidth": undefined,
+      "order": undefined,
+      "overflow": undefined,
+      "paddingBottom": undefined,
+      "paddingLeft": undefined,
+      "paddingRight": undefined,
+      "paddingTop": undefined,
+      "position": undefined,
+      "right": undefined,
+      "top": undefined,
+      "width": undefined
+    }
+  } />
+`;
+
+exports[`test render <HBox /> 2`] = `
+Stylesheet {
+  "css": "
+    box-sizing:border-box;
+    position:relative;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+    display:-webkit-box;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:-webkit-flex;
+    display:flex;
+    align-items:stretch;
+    flex-basis:auto;
+    flex-shrink:0;
+    min-height:0;
+    min-width:0;
+    flex-direction:row;
+    -moz-box-sizing:border-box;
+    -webkit-align-items:stretch;
+    -ms-flex-align:stretch;
+    -webkit-box-align:stretch;
+    -webkit-flex-basis:auto;
+    -ms-preferred-size:auto;
+    -webkit-flex-shrink:0;
+    -ms-flex-negative:0;
+    -webkit-flex-direction:row;
+    -ms-flex-direction:row;
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+    ",
+  "name": "HBox"
+}
+`;
+
+exports[`test render <VBox /> 1`] = `
+<div
+  className="VBox-499292812"
+  style={
+    Object {
+      "alignContent": undefined,
+      "alignItems": undefined,
+      "alignSelf": undefined,
+      "bottom": undefined,
+      "flexBasis": undefined,
+      "flexDirection": undefined,
+      "flexFlow": undefined,
+      "flexGrow": undefined,
+      "flexShrink": undefined,
+      "flexWrap": undefined,
+      "height": undefined,
+      "justifyContent": undefined,
+      "left": undefined,
+      "marginBottom": undefined,
+      "marginLeft": undefined,
+      "marginRight": undefined,
+      "marginTop": undefined,
+      "maxHeight": undefined,
+      "maxWidth": undefined,
+      "minHeight": undefined,
+      "minWidth": undefined,
+      "order": undefined,
+      "overflow": undefined,
+      "paddingBottom": undefined,
+      "paddingLeft": undefined,
+      "paddingRight": undefined,
+      "paddingTop": undefined,
+      "position": undefined,
+      "right": undefined,
+      "top": undefined,
+      "width": undefined
+    }
+  } />
+`;
+
+exports[`test render <VBox /> 2`] = `
+Stylesheet {
+  "css": "
+    box-sizing:border-box;
+    position:relative;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+    display:-webkit-box;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:-webkit-flex;
+    display:flex;
+    align-items:stretch;
+    flex-basis:auto;
+    flex-shrink:0;
+    min-height:0;
+    min-width:0;
+    flex-direction:column;
+    -moz-box-sizing:border-box;
+    -webkit-align-items:stretch;
+    -ms-flex-align:stretch;
+    -webkit-box-align:stretch;
+    -webkit-flex-basis:auto;
+    -ms-preferred-size:auto;
+    -webkit-flex-shrink:0;
+    -ms-flex-negative:0;
+    -webkit-flex-direction:column;
+    -ms-flex-direction:column;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    ",
+  "name": "VBox"
+}
 `;

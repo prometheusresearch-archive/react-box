@@ -3,10 +3,10 @@
  * @flow
  */
 
-import type {DOMStylesheet} from 'react-dom-stylesheet';
+import type {Stylesheet} from 'react-stylesheet/lib/Stylesheet';
 
 import React, {Component} from 'react';
-import {create} from 'react-dom-stylesheet';
+import {stylesheet} from 'react-stylesheet';
 
 function choose<T>(a?: T, b?: T, c?: T): T | void {
   if (a != null) {
@@ -20,16 +20,12 @@ function choose<T>(a?: T, b?: T, c?: T): T | void {
   }
 }
 
-/**
- * Flexbox layout primitive.
- *
- * See https://css-tricks.com/snippets/css/a-guide-to-flexbox/ for docs.
- */
-export default class Box extends Component {
-
-  static stylesheet = create({
+let defaultStylesheet = stylesheet('Box', {
+  base: {
     boxSizing: 'border-box',
     position: 'relative',
+
+    overflow: 'hidden',
 
     margin: 0,
     padding: 0,
@@ -41,9 +37,23 @@ export default class Box extends Component {
 
     minHeight: 0,
     minWidth: 0
-  }, 'Box');
+  }
+});
+
+/**
+ * Flexbox layout primitive.
+ *
+ * See https://css-tricks.com/snippets/css/a-guide-to-flexbox/ for docs.
+ */
+export default class Box extends Component {
+
+  static defaultProps = {
+    stylesheet: defaultStylesheet,
+  };
 
   props: {
+
+    stylesheet: Stylesheet;
 
     /**
      * Sets `align-content` style property.
@@ -385,6 +395,7 @@ export default class Box extends Component {
       padding,
       paddingH, paddingV,
       paddingRight, paddingLeft, paddingTop, paddingBottom,
+      stylesheet,
       ...props
     } = this.props;
     style = {
@@ -427,22 +438,22 @@ export default class Box extends Component {
 
       ...style,
     };
-    let className = this.constructor.stylesheet.asClassName(variant);
-    return <Component className={className} {...props} style={style} />;
+    let className = stylesheet.toClassName(variant);
+    return <Component {...props} style={style} className={className} />;
   }
 
   componentDidMount() {
-    this.constructor.stylesheet.use();
+    this.props.stylesheet.inject();
   }
 
   componentWillUnmount() {
-    this.constructor.stylesheet.dispose();
+    this.props.stylesheet.dispose();
   }
 
-  static style(stylesheet: DOMStylesheet, displayName: string) {
-    return class extends Box {
-      static displayName = displayName;
-      static stylesheet = this.stylesheet.override(stylesheet);
-    };
+  componentWillReceiveProps(nextProps: {stylesheet: Stylesheet}) {
+    if (nextProps.stylesheet !== this.props.stylesheet) {
+      this.props.stylesheet.dispose();
+      nextProps.stylesheet.inject();
+    }
   }
 }

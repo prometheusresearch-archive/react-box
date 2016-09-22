@@ -1,6 +1,6 @@
 {
   "name": "@prometheusresearch/react-box",
-  "version": "0.10.1",
+  "version": "1.0.0",
   "description": "Flexbox based layout primitives for React",
   "main": "lib/index.js",
   "scripts": {
@@ -20,10 +20,13 @@
   "bugs": {
     "url": "https://github.com/prometheusresearch/react-box/issues"
   },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "homepage": "https://github.com/prometheusresearch/react-box#readme",
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",
-    "react-dom-stylesheet": "^0.8.1"
+    "react-stylesheet": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -39,7 +42,7 @@
     "normalize.css": "^3.0.3",
     "react": "^0.14.0 || ^15.0.0",
     "react-dom": "^0.14.0 || ^15.0.0",
-    "react-dom-stylesheet": "^0.8.1",
+    "react-stylesheet": "^2.0.0",
     "react-test-renderer": "^15.3.1"
   }
 }

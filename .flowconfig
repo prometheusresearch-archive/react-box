@@ -1,8 +1,16 @@
 [ignore]
-<PROJECT_ROOT>/node_modules/fbjs/.*.flow
-<PROJECT_ROOT>/node_modules/fbjs/.*.js
-<PROJECT_ROOT>/node_modules/.store/fbjs@.*/.*.flow
-<PROJECT_ROOT>/node_modules/.store/fbjs@.*/.*.js
+<PROJECT_ROOT>/node_modules/fbjs/Deferred.js.flow
+<PROJECT_ROOT>/node_modules/fbjs/Deferred.js
+<PROJECT_ROOT>/node_modules/.store/fbjs@.*/Deferred.js.flow
+<PROJECT_ROOT>/node_modules/.store/fbjs@.*/Deferred.js
+<PROJECT_ROOT>/node_modules/fbjs/PromiseMap.js.flow
+<PROJECT_ROOT>/node_modules/fbjs/PromiseMap.js
+<PROJECT_ROOT>/node_modules/.store/fbjs@.*/PromiseMap.js.flow
+<PROJECT_ROOT>/node_modules/.store/fbjs@.*/PromiseMap.js
+<PROJECT_ROOT>/node_modules/fbjs/shallowEqual.js.flow
+<PROJECT_ROOT>/node_modules/fbjs/shallowEqual.js
+<PROJECT_ROOT>/node_modules/.store/fbjs@.*/shallowEqual.js.flow
+<PROJECT_ROOT>/node_modules/.store/fbjs@.*/shallowEqual.js
 <PROJECT_ROOT>/node_modules/.store/babel-plugin-flow-react-proptypes@.*
 
 [include]
