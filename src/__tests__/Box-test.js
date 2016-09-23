@@ -27,6 +27,11 @@ it('render <HBox />', function() {
   expect(stylesheet).toMatchSnapshot();
 });
 
+it('allows to style component w/ style prop', function() {
+  let tree = Renderer.create(<HBox style={{textAlign: 'center'}} />);
+  expect(tree).toMatchSnapshot();
+});
+
 it('allows to style component', function() {
   let Styled = style(Box, {color: 'red'});
   let tree = Renderer.create(<Styled />);
