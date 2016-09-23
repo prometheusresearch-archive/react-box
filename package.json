@@ -1,6 +1,6 @@
 {
   "name": "@prometheusresearch/react-box",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.1",
   "description": "Flexbox based layout primitives for React",
   "main": "lib/index.js",
   "scripts": {
@@ -42,7 +42,7 @@
     "normalize.css": "^3.0.3",
     "react": "^0.14.0 || ^15.0.0",
     "react-dom": "^0.14.0 || ^15.0.0",
-    "react-stylesheet": "^2.0.0",
+    "react-stylesheet": "2-alpha",
     "react-test-renderer": "^15.3.1"
   }
 }
