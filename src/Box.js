@@ -25,7 +25,7 @@ let defaultStylesheet = stylesheet('Box', {
     boxSizing: 'border-box',
     position: 'relative',
 
-    overflow: 'hidden',
+    overflow: 'visible',
 
     margin: 0,
     padding: 0,
