@@ -10,7 +10,7 @@ import {VBox, HBox} from '../index';
 import Box from '../Box';
 
 function getStylesheetFromTree(tree) {
-  return tree._component._currentElement.props.props.stylesheet;
+  return tree._component._currentElement.props.child.stylesheet;
 }
 
 it('render <VBox />', function() {
